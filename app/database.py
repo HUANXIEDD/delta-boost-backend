@@ -18,6 +18,7 @@ def get_db():
     """
     db = Session()
     try:
+        # 未来我需要弄明白这个是干什么用的
         yield db
     finally:
         db.close()
