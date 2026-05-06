@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97e07149-dd53-449c-a478-8dd0f44be369" name="更改" comment="写到一半的项目">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/security.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/__init__.py" afterDir="false" />
+    <list default="true" id="97e07149-dd53-449c-a478-8dd0f44be369" name="更改" comment="TODO：路由层和服务层">
+      <change beforePath="$PROJECT_DIR$/CLAUDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +45,7 @@
   "keyToString": {
     "FastAPI.FastAPIProject.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -64,7 +62,32 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000">
+    <configuration name="python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="FastAPIProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="uvicorn" />
+      <option name="PARAMETERS" value="app.main:app --reload --host 0.0.0.0 --port 8000" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="FastAPIProject" type="Python.FastAPI">
       <option name="file" value="$PROJECT_DIR$/main.py" />
       <module name="FastAPIProject" />
@@ -83,6 +106,11 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -99,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1777970594231</updated>
       <workItem from="1777970595244" duration="13150000" />
-      <workItem from="1778031059896" duration="10199000" />
+      <workItem from="1778031059896" duration="10943000" />
     </task>
     <task id="LOCAL-00001" summary="写到一半的项目">
       <option name="closed" value="true" />
@@ -117,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778052922880</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="TODO：路由层和服务层">
+      <option name="closed" value="true" />
+      <created>1778057927481</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1778057927481</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +161,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="写到一半的项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="写到一半的项目" />
+    <MESSAGE value="TODO：路由层和服务层" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO：路由层和服务层" />
   </component>
 </project>
