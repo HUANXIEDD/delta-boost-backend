@@ -32,30 +32,30 @@ def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
 
 
-def create_access_token(data: str) -> str:
+def create_access_token(data: dict) -> str:
     """
      创建 JWT Token
-     Args:
-         data:要存入 Token 的数据，通常是用户名
+    Args:
+        data: 要存入 Token 的数据，格式 {"sub": 用户名, "role": 角色}
     Return:
         签发后的JWT字符串
     """
     expire = datetime.utcnow() + timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
-    to_encode = {"sub": data, "exp": expire}
+    to_encode = {"sub": data["sub"], "role": data["role"], "exp": expire}
     return jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
 
 
-def verify_token(token: str) -> str | None:
+def verify_token(token: str) -> dict | None:
     """
     验证JWT Token 是否有效
 
-    Args：
-        token：客户端传来的JWT Token
-    Return：
-        Token：有效则返回用户名，无效则返回 None
+    Args:
+        token: 客户端传来的JWT Token
+    Return:
+        有效则返回 {"sub": 用户名, "role": 角色}，无效则返回 None
     """
     try:
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
-        return payload.get("sub")
+        return {"sub": payload.get("sub"), "role": payload.get("role")}
     except JWTError:
         return None
