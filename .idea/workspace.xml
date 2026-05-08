@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97e07149-dd53-449c-a478-8dd0f44be369" name="更改" comment="TODO：路由层和服务层">
+    <list default="true" id="97e07149-dd53-449c-a478-8dd0f44be369" name="更改" comment="TODO：写了一点接口">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/booster.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/booster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/superpowers/specs/2026-05-05-delta陪玩店票务系统-design.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/superpowers/specs/2026-05-05-delta陪玩店票务系统-design.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +129,7 @@
       <option name="presentableId" value="Default" />
       <updated>1777970594231</updated>
       <workItem from="1777970595244" duration="13150000" />
-      <workItem from="1778031059896" duration="22634000" />
+      <workItem from="1778031059896" duration="29347000" />
     </task>
     <task id="LOCAL-00001" summary="写到一半的项目">
       <option name="closed" value="true" />
@@ -162,16 +163,36 @@
       <option name="project" value="LOCAL" />
       <updated>1778058565800</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="TODO：写了一点接口">
+      <option name="closed" value="true" />
+      <created>1778163527814</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778163527814</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="写到一半的项目" />
     <MESSAGE value="TODO：路由层和服务层" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO：路由层和服务层" />
+    <MESSAGE value="TODO：写了一点接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO：写了一点接口" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/delta_boost_backend$python__m_uvicorn_app_main_app___reload___host_0_0_0_0___port_8000.coverage" NAME="python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 覆盖结果" MODIFIED="1778058498189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

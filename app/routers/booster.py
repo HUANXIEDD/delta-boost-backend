@@ -8,7 +8,7 @@ from app.models import Booster, BoosterPrice, Order, Review
 from app.schemas.booster import (
     BoosterCreate, BoosterLogin, BoosterUpdate, BoosterResponse
 )
-from app.schemas.booster_price import BoosterPriceCreate, BoosterPriceResponse
+from app.schemas.booster_price import BoosterPriceCreate, BoosterPriceResponse, BoosterPriceUpdate
 from app.core.security import verify_password, get_password_hash, create_access_token
 
 
@@ -56,7 +56,24 @@ def profile(data : BoosterUpdate ,
         current_booster.bio = data.bio
     if data.services is not None:
         current_booster.services = data.services
-
     db.commit()
     db.refresh(current_booster)
     return{"message":"更新成功" , "booster" : current_booster}
+
+@router.get("/profile" , status_code = status.HTTP_200_OK)
+def get_profile(current_booster : Booster = Depends(get_current_booster)):
+    return current_booster
+
+@router.get("/price" , status_code = status.HTTP_200_OK)
+def get_price(current_booster : Booster = Depends(get_current_booster)):
+    return current_booster.prices
+
+@router.post("/updateprice" , status_code = status.HTTP_201_CREATED)
+def update_price(data : BoosterPriceUpdate ,
+                 db : Session = Depends(get_db),
+                 current_booster : Booster = Depends(get_current_booster)):
+    if data.price is not None:
+        current_booster.price = data.price
+    db.commit()
+    db.refresh(current_booster)
+    return {"message" : "更新成功" , "price" : current_booster.price}

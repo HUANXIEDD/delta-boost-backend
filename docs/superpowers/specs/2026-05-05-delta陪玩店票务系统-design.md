@@ -181,21 +181,21 @@ CREATED（已下单）
 
 ### 5.2 打手路由 `/api/booster`
 
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| POST | /register | 打手注册 |
-| POST | /login | 打手登录 |
-| GET | /profile | 获取个人信息 |
-| PUT | /profile | 完善个人信息 |
-| GET | /prices | 获取我的报价 |
-| PUT | /prices | 设置/更新报价 |
-| PUT | /status | 更新忙碌状态（忙碌/空闲） |
-| GET | /orders | 获取我的订单 |
-| PUT | /orders/{id}/accept | 接受订单 |
-| PUT | /orders/{id}/reject | 拒绝订单 |
-| PUT | /orders/{id}/complete | 完成服务 |
-| GET | /reviews | 查看我的评价 |
-| POST | /reviews/{id}/reply | 回复评价 |
+| 方法   | 路径                    | 说明 |
+|------|-----------------------|------|
+| POST | /register             | 打手注册 |
+| POST | /login                | 打手登录 |
+| GET  | /profile              | 获取个人信息 |
+| PUT  | /profile              | 完善个人信息 |
+| GET  | /prices               | 获取我的报价 |
+| POST | /updateprice          | 设置/更新报价 |
+| PUT  | /status               | 更新忙碌状态（忙碌/空闲） |
+| GET  | /orders               | 获取我的订单 |
+| PUT  | /orders/{id}/accept   | 接受订单 |
+| PUT  | /orders/{id}/reject   | 拒绝订单 |
+| PUT  | /orders/{id}/complete | 完成服务 |
+| GET  | /reviews              | 查看我的评价 |
+| POST | /reviews/{id}/reply   | 回复评价 |
 
 ### 5.3 客户路由 `/api/customer`
 
