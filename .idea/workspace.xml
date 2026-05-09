@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="97e07149-dd53-449c-a478-8dd0f44be369" name="更改" comment="TODO：写了一点接口">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLAUDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/booster.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/booster.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/superpowers/specs/2026-05-05-delta陪玩店票务系统-design.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/superpowers/specs/2026-05-05-delta陪玩店票务系统-design.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/booster.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/booster.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +130,7 @@
       <option name="presentableId" value="Default" />
       <updated>1777970594231</updated>
       <workItem from="1777970595244" duration="13150000" />
-      <workItem from="1778031059896" duration="29347000" />
+      <workItem from="1778031059896" duration="45711000" />
     </task>
     <task id="LOCAL-00001" summary="写到一半的项目">
       <option name="closed" value="true" />
@@ -171,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778163527814</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="TODO：写了一点接口">
+      <option name="closed" value="true" />
+      <created>1778212242239</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778212242239</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

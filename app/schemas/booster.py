@@ -26,6 +26,8 @@ class BoosterUpdate(BaseModel):
     bio: str | None = None
     services: list[str] | None = None  # 擅长服务列表，如 ["护航", "情绪"]
 
+class BoosterSwitchStatus(BaseModel):
+    is_busy: bool
 
 class BoosterResponse(BoosterBase):
     """API 返回给客户端的打手信息"""

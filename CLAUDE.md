@@ -33,18 +33,18 @@ app/
 │   ├── review.py         # Review
 │   └── reservation.py   # Reservation
 ├── schemas/             # Pydantic 格式校验（每个模型 3-4 个 Schema）
-│   ├── booster.py        # BoosterCreate/Update/Login/Response
+│   ├── booster.py        # BoosterCreate/Update/Login/Response/SwitchStatus
 │   ├── booster_price.py # BoosterPriceCreate/Update/Response
 │   ├── customer.py       # CustomerCreate/Login/Response
 │   ├── order.py          # OrderCreate/StatusUpdate/Confirm/Response
 │   ├── review.py         # ReviewCreate/Reply/Response
 │   ├── reservation.py    # ReservationCreate/StatusUpdate/Response
 │   └── shop.py           # ShopLogin/Response
-├── routers/             # 路由（业务逻辑尚未实现）
-│   ├── shop.py           # /api/shop
-│   ├── booster.py        # /api/booster
-│   ├── customer.py       # /api/customer
-│   └── reservation.py    # /api/reservation
+├── routers/             # 路由
+│   ├── shop.py           # /api/shop（空壳）
+│   ├── booster.py        # /api/booster（✅ 已完成 12 个接口）
+│   ├── customer.py       # /api/customer（空壳）
+│   └── reservation.py    # /api/reservation（空壳）
 └── services/            # 业务逻辑（空目录）
 ```
 
@@ -57,21 +57,47 @@ app/
 | dependencies | ✅ 完成 | 三个角色的认证依赖，get_current_user 验证 Token |
 | main.py | ✅ 完成 | lifespan 建表、路由注册、uvicorn 启动 |
 | 数据库配置 | ✅ 完成 | 开发用 SQLite（sqlite:///./delta_boost.db） |
+| routers/booster | ✅ 完成 | 打手路由 12 个接口全部完成 |
 
 ## 当前开发进度
 
-**下一步：编写路由业务逻辑（routers 层）**
+**下一步：完成剩余 3 个路由**
 
-设计文档：`docs/superpowers/specs/2026-05-05-delta陪玩店票务系统-design.md`
+| 优先级 | 路由 | 接口数 | 说明 |
+|--------|------|--------|------|
+| 1 | `/api/shop` | 6 | 店家登录、审核打手、查看订单 |
+| 2 | `/api/customer` | 12 | 客户注册/登录、搜索打手、下单、评价 |
+| 3 | `/api/reservation` | 5 | 预约创建、查看、接受/拒绝 |
 
-### 路由概览
+### Booster 路由已完成接口（供参考）
 
-| 路由 | 主要 API |
-|------|---------|
-| `/api/shop` | POST /login（店家登录）<br>GET /boosters（查看打手列表）<br>PUT /boosters/{id}/approve（审核通过）<br>PUT /boosters/{id}/reject（审核拒绝）<br>PUT /boosters/{id}/disable（禁用）<br>GET /orders（查看所有订单） |
-| `/api/booster` | POST /register（注册）<br>POST /login（登录）<br>GET /profile（获取信息）<br>PUT /profile（完善信息）<br>GET /prices（获取报价）<br>PUT /prices（设置报价）<br>PUT /status（更新忙碌状态）<br>GET /orders（我的订单）<br>PUT /orders/{id}/accept（接单）<br>PUT /orders/{id}/reject（拒单）<br>PUT /orders/{id}/complete（完成服务）<br>GET /reviews（评价列表）<br>POST /reviews/{id}/reply（回复评价） |
-| `/api/customer` | POST /register（注册）<br>POST /login（登录）<br>GET /boosters（浏览打手）<br>GET /boosters/search（模糊搜索）<br>GET /boosters/{id}（打手详情）<br>POST /orders（下单）<br>GET /orders（我的订单）<br>GET /orders/{id}（订单详情）<br>PUT /orders/{id}/confirm（确认完成）<br>PUT /orders/{id}/cancel（取消订单）<br>POST /orders/{id}/review（提交评价） |
-| `/api/reservation` | POST /（创建预约）<br>GET /my（我的预约-客户）<br>GET /reservations（预约列表-打手）<br>PUT /{id}/accept（接受预约）<br>PUT /{id}/reject（拒绝预约） |
+| 方法 | 路径 | 功能 |
+|------|------|------|
+| POST | /register | 注册 |
+| POST | /login | 登录 |
+| GET | /profile | 获取个人信息 |
+| POST | /profile | 更新个人信息 |
+| GET | /prices | 获取报价 |
+| POST | /prices | 设置报价 |
+| POST | /status | 切换忙碌状态 |
+| GET | /orders | 查看我的订单 |
+| POST | /orders/{order_id}/accept | 接单 |
+| POST | /orders/{order_id}/reject | 拒单 |
+| POST | /orders/{order_id}/complete | 完成服务 |
+| GET | /reviews | 查看评价 |
+| POST | /reviews/{review_id}/reply | 回复评价 |
+
+## 已踩过的坑（避免重复犯错）
+
+- `Depends(get_db)` 不加括号，不是 `Depends(get_db())`
+- relationship 字段不加 `Mapped[...]` 类型注解，避免 IDE 报错
+- 用 `order.booster_id`（外键字段）而非 `order.booster.id`（触发额外查询）
+- `list[str]` 存数据库要 `json.dumps()` 转字符串
+- 认证失败用 `raise HTTPException`，不是 `return HTTPException`
+- 路由路径不加前缀，路由器已有 `prefix="/booster"`
+- `return` 异常不会中止请求，必须用 `raise`
+- 可空字段用 `str | None` 而非 `Optional[str]`
+- 用户偏好用 POST 而非 PUT（认为 POST 更通用）
 
 ## 技术要点
 
